@@ -12,6 +12,9 @@ function getRoutes(router) {
 
   // products
   require("./products")(router, API_PREFIX);
+
+  // blogs
+  require("./blogs")(router, API_PREFIX);
   return router;
 }
 
