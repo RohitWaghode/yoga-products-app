@@ -26,6 +26,11 @@ function productsRoutes(router, API_PREFIX) {
     upload.single("image"),
     productsControllers.editProducts
   );
+
+  router.delete(
+    API_PREFIX + "/products/delete/:_id",
+    productsControllers.deleteProducts
+  );
 }
 
 module.exports = productsRoutes;
