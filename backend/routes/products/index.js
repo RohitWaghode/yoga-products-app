@@ -2,11 +2,6 @@ const productsControllers = require("../../controllers/products");
 const multer = require("multer");
 
 function productsRoutes(router, API_PREFIX) {
-  //   router.post(
-  //     API_PREFIX + "/products/create",
-  //     productsControllers.createProducts
-  //   );
-
   const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, "uploads/");
@@ -23,6 +18,8 @@ function productsRoutes(router, API_PREFIX) {
     upload.single("image"),
     productsControllers.createProducts
   );
+
+  router.get(API_PREFIX + "/products/list", productsControllers.listProducts);
 }
 
 module.exports = productsRoutes;
