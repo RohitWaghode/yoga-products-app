@@ -3,4 +3,5 @@ module.exports = {
   listProducts: require("./list"),
   editProducts: require("./edit"),
   deleteProducts: require("./delete"),
+  listSingleProducts: require("./listSingle"),
 };

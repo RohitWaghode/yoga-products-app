@@ -21,6 +21,11 @@ function productsRoutes(router, API_PREFIX) {
 
   router.get(API_PREFIX + "/products/list", productsControllers.listProducts);
 
+  router.get(
+    API_PREFIX + "/product/list/:_id",
+    productsControllers.listSingleProducts
+  );
+
   router.put(
     API_PREFIX + "/products/edit/:_id",
     upload.single("image"),
