@@ -18,6 +18,8 @@ function blogsRoutes(router, API_PREFIX) {
     upload.single("image"),
     blogsControllers.createBlogs
   );
+
+  router.get(API_PREFIX + "/blogs/list", blogsControllers.listBlogs);
 }
 
 module.exports = blogsRoutes;
