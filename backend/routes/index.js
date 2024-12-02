@@ -9,6 +9,9 @@ function getRoutes(router) {
 
   // users
   require("./user")(router, API_PREFIX);
+
+  // products
+  require("./products")(router, API_PREFIX);
   return router;
 }
 
