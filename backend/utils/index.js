@@ -1,8 +1,8 @@
 const uuid = require("uuid");
 
 const utils = {
-  generateUid: async function generateUid(prefix) {
-    return `${prefix}${uuid.v4()}`.substring(10);
+  generateUid: async function generateUid(prefix, val = 10) {
+    return `${prefix}${uuid.v4()}`.substring(val);
   },
 };
 
