@@ -20,6 +20,12 @@ function productsRoutes(router, API_PREFIX) {
   );
 
   router.get(API_PREFIX + "/products/list", productsControllers.listProducts);
+
+  router.put(
+    API_PREFIX + "/products/edit/:_id",
+    upload.single("image"),
+    productsControllers.editProducts
+  );
 }
 
 module.exports = productsRoutes;

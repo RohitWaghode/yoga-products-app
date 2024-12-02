@@ -1,4 +1,5 @@
 module.exports = {
   createProducts: require("./create"),
   listProducts: require("./list"),
+  editProducts: require("./edit"),
 };
