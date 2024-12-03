@@ -1,3 +1,4 @@
+import Blogs from "@/app/blogs/page";
 import Link from "next/link";
 import React from "react";
 
@@ -21,6 +22,11 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex items-center gap-4">
+          <Link href={"/blogs"}>
+            <button className="h-10 rounded-md border border-primary-500 px-4 py-2 text-sm font-medium text-primary-500 transition-all hover:border-primary-100 hover:bg-primary-100 active:border-primary-200 active:bg-primary-200">
+              Blogs
+            </button>
+          </Link>
           <button className="h-10 rounded-md border border-primary-500 px-4 py-2 text-sm font-medium text-primary-500 transition-all hover:border-primary-100 hover:bg-primary-100 active:border-primary-200 active:bg-primary-200">
             Sign in
           </button>
