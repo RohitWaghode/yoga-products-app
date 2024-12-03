@@ -2,10 +2,13 @@ import React from "react";
 import Image from "next/image";
 
 const SingleProductPage = async ({ params }) => {
+  const productParams = await params;
+
   let product = null;
+
   try {
     const response = await fetch(
-      `${process.env.BACKEND_BASE_URL}/product/list/${params.productId}`
+      `${process.env.BACKEND_BASE_URL}/product/list/${productParams.productId}`
     );
     if (!response.ok) {
       throw new Error("Error fetching product");
