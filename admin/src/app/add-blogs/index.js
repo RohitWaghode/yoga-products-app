@@ -34,7 +34,7 @@ const CreateBlogs = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:7000/yoga-app/v1/blogs/create",
+        `${process.env.BACKEND_BASE_URL}/blogs/create`,
         {
           method: "POST",
           body: formData,

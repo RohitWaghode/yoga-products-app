@@ -36,7 +36,7 @@ const CreateProduct = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:7000/yoga-app/v1/products/create",
+        `${process.env.BACKEND_BASE_URL}/products/create`,
         {
           method: "POST",
           body: formData,

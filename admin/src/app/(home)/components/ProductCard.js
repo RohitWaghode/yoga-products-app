@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
 
   const handleDelete = async (_id) => {
     const response = await fetch(
-      `http://localhost:7000/yoga-app/v1/products/delete/${_id}`,
+      `${process.env.BACKEND_BASE_URL}/products/delete/${_id}`,
       {
         method: "DELETE",
       }

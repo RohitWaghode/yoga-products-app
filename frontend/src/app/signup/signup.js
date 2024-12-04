@@ -26,7 +26,7 @@ const CreateUser = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:7000/yoga-app/v1/users/register",
+        `${process.env.BACKEND_BASE_URL}users/register`,
         {
           method: "POST",
           headers: {
