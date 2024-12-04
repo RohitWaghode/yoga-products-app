@@ -10,8 +10,6 @@ const CreateProduct = () => {
   };
   const [productData, setProductData] = useState(initialState);
 
-  const [error, setError] = useState("");
-
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     if (type === "file") {
@@ -49,11 +47,9 @@ const CreateProduct = () => {
       if (data && data.output) {
         alert("Product created successfully!");
         setProductData(initialState);
-      } else {
-        setError(data.message);
       }
     } catch (error) {
-      setError("Error creating product");
+      throw new Error(error);
     }
   };
 
