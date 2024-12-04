@@ -18,6 +18,9 @@ function getRoutes(router) {
 
   // carts
   require("./carts")(router, API_PREFIX);
+
+  // admin
+  require("./admin")(router, API_PREFIX);
   return router;
 }
 

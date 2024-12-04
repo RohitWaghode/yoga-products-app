@@ -9,6 +9,7 @@ const userScema = new mongoose.Schema(
     email_address: { type: String, required: true },
     mobile_number: { type: Number, required: true },
     password: { type: String, required: true },
+    user_type: { type: String, enum: ["admin"] },
   },
   { timestamps: true }
 );
