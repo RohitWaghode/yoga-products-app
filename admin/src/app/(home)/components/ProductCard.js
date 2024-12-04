@@ -1,8 +1,26 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const ProductCard = ({ product }) => {
+  const [products, setProducts] = useState([]);
+
+  const handleDelete = async (_id) => {
+    const response = await fetch(
+      `http://localhost:7000/yoga-app/v1/products/delete/${_id}`,
+      {
+        method: "DELETE",
+      }
+    );
+    if (response.ok) {
+      setProducts(products.filter((prod) => prod._id !== _id));
+      alert("Product deleted successfully");
+    } else {
+      const data = await response.json();
+      throw new Error(data.message);
+    }
+  };
   return (
     <div className="flex gap-5 border py-5 shadow-md rounded">
       <Image
@@ -27,6 +45,13 @@ const ProductCard = ({ product }) => {
         >
           Read More
         </Link>
+        <button
+          className="py-1 px-4 m-2 rounded border border-primary-500 mt-5 inline-block text-primary-500 font-medium text-sm 
+          hover:border-primary-100 hover:bg-primary-100"
+          onClick={() => handleDelete(product._id)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
